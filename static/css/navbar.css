@@ -2,10 +2,15 @@
     background-color: #EAE0DA;
     border-color: rgba(231, 231, 231, 0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    position: sticky !important;
+    top:0;
+    z-index: 2;
   }
   a{
     text-decoration: none !important;
+    color:#333 !important;
   }
+  
   a:hover{
     color: #333 !important;
   }
@@ -13,7 +18,7 @@
     font-family: "Raleway", sans-serif;
     font-size: 24px;
     font-weight: 600;
-    color: #333;
+    color: #333 !important;
     text-transform: uppercase;
     margin-left:10%;
   }
