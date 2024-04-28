@@ -46,10 +46,6 @@ body
   margin-top: 200px;
   margin-bottom: 50px;
 }
-.form-control:focus {
-    border-color: rgb(255, 172, 172);
-    box-shadow: 0 0 0 0.25rem rgb(255, 172, 172,0.8);
-  }
 main
 {
     /* Scroll horizontally as needed */
