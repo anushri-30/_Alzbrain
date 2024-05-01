@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block main %}
+<link href="static\css\form.css" rel="stylesheet">
+<script src="script.js"></script>
+<div class="contact">
+   <form id="quiz-form" action="{{ url_for('moca') }}" method="post">
+      <div class="pt-4" >
+         <div class="pt-3 ">
+            <label>UserName:</label>
+            <input type="text" value="{{session.username}}" class="form-control" placeholder="Enter Username"
+               name=username>
+         </div>
+         <div class="pt-3">
+            <label>First Name:</label>
+            <input type="text" class="form-control" placeholder="Enter First name" name="f_name">
+         </div>
+         <div class="pt-3">
+            <label>Last Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Last name" name="l_name">
+         </div>
+      </div>
+      <div>
+         <p class='pt-3 '>1. Can you repeat these words: "Apple, Table, Penny"?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q1" value="Yes">Yes</label>
+        <label><input type="radio" name="q1" value="NO"> No</label>
+      </div>
+      </div>
+      <div>
+         <p class='pt-3 '>2. Can you remember the words I just asked you to repeat?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q2" value="Yes">Yes</label>
+         <label><input type="radio" name="q2" value="NO"> No</label>
+      </div>
+      </div>
+      <div>
+         <p class='pt-3 '>3. Can you repeat this "I only know that John is the one to help today." after me?Were you able to do it correctly or did you stutter?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q3" value="Yes">Yes</label>
+         <label><input type="radio" name="q3" value="NO"> No</label>
+         </div>
+      </div>
+      <div>
+         <p class='pt-3 '>4. Can you read and follow these instructions?  Please Close your eyes</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q4" value="Yes">Yes</label>
+         <label><input type="radio" name="q4" value="NO"> No</label>
+      </div>
+      </div>
+      <div>
+         <p class='pt-3 '>5. Can you spell the word "WORLD" backward?Were you able to do it correctly or did you stutter?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q5" value="Yes">Yes</label>
+         <label><input type="radio" name="q5" value="NO"> No</label>
+      </div>
+      </div>
+      <div>
+         <p class='pt-3 '>6. Can you repeat "7, 2, 8" backward? Were you able to do it correctly or did you stutter?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q6" value="Yes">Yes</label>
+         <label><input type="radio" name="q6" value="NO"> No</label>
+         </div>
+      </div>
+      <div>
+         <p class='pt-3 '>7. Can you count backward from 20 to 1? Were you able to do it or did you stutter?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q7" value="Yes">Yes</label>
+         <label><input type="radio" name="q7" value="NO"> No</label>
+         </div>
+      </div>
+      <div>
+         <p class='pt-3 '>8. Can you count forward from 10 to 1?Were you able to do it or did you stutter?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q8" value="Yes">Yes</label>
+         <label><input type="radio" name="q8" value="NO"> No</label>
+         </div>
+      </div>
+      <div>
+         <p class='pt-3 '>9. Can you recall the name of your elementary school?</p>
+         <div style="display: inline-flex !important; width: 100%;">
+         <label><input type="radio" name="q9" value="Yes">Yes</label>
+         <label><input type="radio" name="q9" value="NO"> No</label>
+         </div>
+      </div>
+      <div>
+         <p class='pt-3 '>10. Who is the Prime Minister of Your country?</p>
+         <!-- a -->
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+            <label><input type="radio" name="q10" value="Yes">Narendra Modi</label>
+           <label><input type="radio" name="q10" value="NO"> Barrack Obama</label>
+           <label><input type="radio" name="q10" value="NO">Nitish Kumar</label>
+           <label><input type="radio" name="q10" value="NO">Christiano Ronaldo</label>
+         </div>
+      </div>
+      <div >
+         <!-- b -->
+         <p class="pt-3">11. Can you tell me what these two words Carrot and potato have in common?</p>
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q11" value="a">Nothing common</label>
+           <label><input type="radio" name="q11" value="b"> They are vegetables</label>
+           <label><input type="radio" name="q11" value="c">They are fruits</label>
+       </div>
+      </div>
+       <div >
+         <!-- a -->
+         <p class="pt-3">12. Can you tell me what these three numbers "3, 6, 9" have in common  ?</p>
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q12" value="a">They are multiples of 3</label>
+           <label><input type="radio" name="q12" value="b"> They are even number</label>
+           <label><input type="radio" name="q12" value="c">They are odd number</label>
+         </div>
+       </div>
+       <div >
+         <!-- b -->
+         <p class="pt-3">13. Can you tell me what these two Abraham Lincoln and Mahatma Gandhi have in common ?</p>
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q13" value="a">They are normal people.</label>
+           <label><input type="radio" name="q13" value="b"> They are famous freedom fighters. </label>
+           <label><input type="radio" name="q13" value="c">They are autocrats.</label>
+       </div>
+       </div>
+       <div >
+         <!--b -->
+         <p class="pt-3">14. Can you name these animals? </p>
+         <img src="static\images\dog and cat.jpg" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q14" value="a">Dog and parrot</label>
+           <label><input type="radio" name="q14" value="b">Dog and Cat</label>
+           <label><input type="radio" name="q14" value="c">Dog and Donkey</label>
+           <label><input type="radio" name="q14" value="c">Dog and puppy</label>
+         </div>
+       </div>
+       <div >
+         <!-- b-->
+         <p class="pt-3">15. What are these different geometric shapes?</p>
+         <img src="static\images\shapes.jpg" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q15" value="a">Circle and Rectangle</label>
+           <label><input type="radio" name="q15" value="b">Circle and Square</label>
+           <label><input type="radio" name="q15" value="c">Circle and Triangle</label>
+           <label><input type="radio" name="q15" value="c">Square</label>
+         </div>
+       </div>
+       <div >
+         <p class="pt-3">16. Can you say what this object is used for?</p>
+         <img src="static\images\mop.jpg" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q16" value="a">Cleaning</label>
+           <label><input type="radio" name="q16" value="b">Cooking</label>
+           <label><input type="radio" name="q16" value="c">Bathing</label>
+           <label><input type="radio" name="q16" value="c">Eating</label>
+         </div>
+       </div>
+       <div >
+         <!-- a-->
+         <p class="pt-3">17. Can you tell me what these two items are used for?</p>
+         <img src="static\images\spoonfork.jpg" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q17" value="a">Eating</label>
+           <label><input type="radio" name="q17" value="b">Cleaning</label>
+           <label><input type="radio" name="q17" value="c">Bathing</label>
+           <label><input type="radio" name="q17" value="c">Cooking</label>
+       </div>
+      </div>
+       <div >
+         <!-- a-->
+         <p class="pt-3">18. Can you tell me the name of this monument?</p>
+         <img src="static\images\eiffel.jpg" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q18" value="a">Eiffel Tower</label>
+           <label><input type="radio" name="q18" value="b">Taj Mahal</label>
+           <label><input type="radio" name="q18" value="c">Your Home</label>
+           <label><input type="radio" name="q18" value="c">India Gate</label>
+         </div>
+       </div>
+       <div >
+         <!-- Yes -->
+         <p class="pt-3">19. Who is he?</p>
+         <img src="static\images\gandhi.jpg" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+         <label><input type="radio" name="q19" value="Yes">Mahatama Gandhi</label>
+         <label><input type="radio" name="q19" value="NO"> Barrack Obama</label>
+         <label><input type="radio" name="q19" value="NO">Nitish Kumar</label>
+         <label><input type="radio" name="q19" value="NO">Christiano Ronaldo</label>
+       </div>
+       </div>
+       <div >
+         <!-- c-->
+         <p class="pt-3">20.How many triangles are in this image</p>
+         <img src="static\images\triangle.png" class="img-responsive" alt="" />
+         <div style="display: inline-flex !important; width: 650px; flex-wrap: wrap;">
+           <label><input type="radio" name="q20" value="a">6</label>
+           <label><input type="radio" name="q20" value="b">7</label>
+           <label><input type="radio" name="q20" value="c">5</label>
+           <label><input type="radio" name="q20" value="c">3</label>
+       </div>
+       </div>
+      <div style="margin-left: 18px !important; margin-top: 5% !important;">
+         <p class="pt-3">Enter your Contact details so that we can revert back to you?</p>
+         <textarea name="text" type='text' style="margin-left: 8px !important; margin-bottom: 2px !important;"
+            placeholder='Contact Details...'></textarea>
+         <p class="pt-3">Any comments or suggestions to US?</p>
+         <textarea name="text" type='text' style="margin-left: 8px !important; margin-bottom: 2px !important;"
+            placeholder='Enter your comment here...'></textarea>
+      </div>
+      <div class="center">
+         <button class="btn  b" type="submit">SUBMIT</button>
+      </div>
+   </form>
+   <div id="quiz-results">
+      <p id="quiz-results-message"></p>
+      <p id="quiz-results-score"></p>
+    </div>
+</div>
+{% endblock %}
