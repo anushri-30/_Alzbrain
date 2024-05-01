@@ -70,33 +70,25 @@ def logout():
     # Redirect user to login form
     return redirect("/")      
     
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
+@app.route("/moca", methods=["GET", "POST"])
+def moca():
     if request.method == "POST":
         first_name= request.form.get("f_name")
         last_name= request.form.get("l_name")
         user = request.form.get("user")
-        role = request.form.get("role")
         message = request.form['text']
 
         # Ensure username was submitted
         if not first_name or not last_name :
             return ("Please provide your name", 403)
-
         # Ensure necessary data was submitted
-        elif not user:
-            return apology("please provide data", 403)
-        elif not role:
-            return apology("please provide current role", 403)
         elif not message:
             return apology("please provide some comments", 403)
-
-
         # Redirect user to home page
         return redirect("/")
 
     else:
-        return render_template("form.html")
+        return render_template("moca.html")
 
 
     
