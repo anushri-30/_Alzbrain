@@ -72,21 +72,6 @@ body
   margin-left: -10px;
 }
 
-.contact
-{
-    padding-top: 4px;
-    border-radius: 0.3rem;
-    width: 700px;
-    height: 100%;  
-    padding: 40px;
-    color: rgb(75, 75, 75);
-    border: 1px solid  #fdbebe;
-    margin: auto;
-}
-
-select{
-  margin-left: 18px !important; 
-}
 /* Features */
 .feature {
   background: #f6f6f6;
