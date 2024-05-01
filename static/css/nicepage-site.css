@@ -23,7 +23,7 @@ h6 {
 }
 .u-body {
   color: #111111;
-  background-color: #ffffff;
+  background-color: #FDF4F5;
   --effect-scale: 1.1;
 }
 /*end-variables color*/
@@ -4421,7 +4421,7 @@ section.u-palette-4-base:before,
 .u-button-style.u-palette-4-base,
 .u-button-style.u-palette-4-base[class*="u-border-"] {
   color: #111111 !important;
-  background-color: #93d6d0 !important;
+  background-color: #863A6F !important;
 }
 .u-button-style.u-palette-4-base:hover,
 .u-button-style.u-palette-4-base[class*="u-border-"]:hover,
