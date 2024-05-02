@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #E4D0D0; /* Set pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #748DA6; /* Set pink color for button */
+            color: #fff;;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #babaea; /* Darker pink color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Moca Test Results</h1>
+        <p>{{ mess }}</p>
+        <div>
+            <button class="button" id="retryButton">Submit MRI for better</button>
+            <button class="button" id="anotherButton">No Take me back home</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('retryButton').onclick = function() {
+            window.location.href = '/predict';
+        }
+
+        document.getElementById('anotherButton').onclick = function() {
+            window.location.href='/'
+        }
+    </script>
+</body>
+</html>

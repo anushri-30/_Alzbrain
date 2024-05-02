@@ -9,6 +9,29 @@ from helper import apology
 # Configure application
 app = Flask(__name__)
 
+correct_answers = {
+    'q1': 'Yes',
+    'q2': 'Yes',
+    'q3': 'Yes',
+    'q4': 'Yes',
+    'q5': 'Yes',
+    'q6': 'Yes',
+    'q7': 'Yes',
+    'q8': 'Yes',
+    'q9': 'Yes',
+    'q10': 'Christiano Ronaldo',
+    'q11': 'They are vegetables',
+    'q12': 'They are multiples of 3',
+    'q13': 'YThey are famous freedom fighters.',
+    'q14': 'Dog and Cat',
+    'q15': 'Circle and Rectangle',
+    'q16': 'Cleaning',
+    'q17': 'Eating',
+    'q18': 'Eiffel Tower',
+    'q19': 'Mahatama Gandhi',
+    'q20': '5',
+}
+
 # Ensure responses aren't cached
 
 @app.after_request
@@ -90,7 +113,7 @@ def moca():
     else:
         return render_template("moca.html")
     
-@app.route("/predict")
+@app.route("/predict", methods=["GET"])
 def predict ():
     return render_template("mri.html")
 
@@ -162,7 +185,26 @@ def delete():
         return redirect("/")
     else:
         return render_template("delete.html")
+    
 
+@app.route('/submit_quiz', methods=["GET", "POST"])
+def submit_quiz():
+    mess ='champ'
+    name = [request.form[key] for key in request.form if key.startswith('f_name')]
+    # Parse form data
+    answers = {key: request.form[key] for key in request.form if key.startswith('q')}
+    
+    # Calculate score
+    score = 0
+    for question, user_answer in answers.items():
+        if user_answer == correct_answers.get(question):
+            score += 1
+    
+    if score < 13:
+        mess = f"Hey {name[0]}, your score is {(score/20)*100}. PLease go have MRI scan we are having doubts....PS : Be Positive !!!"
+    else:
+        mess = f"Hey {name[0]}, your score is {(score/20)*100}. You are good to go....though having second opinion doesn't hurt !!!"
+    return render_template('moca_score.html',mess=mess)
 if __name__=="__main__":
     app.run(debug=True)
 
