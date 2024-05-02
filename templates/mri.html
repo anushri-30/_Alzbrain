@@ -4,15 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\predict.css">
     <title>MRI Image Prediction</title>
 </head>
 <body>
-    <h1>MRI Image Prediction</h1>
+    <h1>How's Your Memory Holding Up? Find Out Your Alzheimer's Risk Today!</h1>
+    <h2>Upload Your MRI Scans Here! </h2>
+    <!-- <div class="predict">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button class="b1" id="pop1" type="submit">NON</button>
+            <button class="b2" id="pop2" type="submit">RESULTS</button>
+            <button class="b3" id="pop3" type="submit">MODERATE</button>
+            
+        </form>
+        <button class="b4" id="pop4" type="submit">DEMENTED</button>
+    </div> -->
+   
+    <!-- <div id="result">
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closePopup">&times;</span>
+                <p>Non Demented</p>
+            </div>
+        </div>
+    </div> -->
     <form action="/predict" method="post" enctype="multipart/form-data">
         <input type="file" name="file" accept="image/*" required>
-        <button type="submit">Predict</button>
+        <button class="b1" onclick="showPopup('popup1')"></button>
+        <button class="b2" onclick="showPopup('popup2')">RESULTS</button>
+        <button class="b3" onclick="showPopup('popup3')"></button>
     </form>
-    <div id="result"></div>
+    <button class="b4" onclick="showPopup('popup4')"></button>
+
+    <div id="popup1" class="popup">
+        <p>NON DEMENTED</p>
+        <button onclick="hidePopup('popup1')">Close</button>
+    </div>
+    <div id="popup2" class="popup">
+        <p>MILD DEMENTIA</p>
+        <button onclick="hidePopup('popup2')">Close</button>
+    </div>
+    <div id="popup3" class="popup">
+        <p>MODERATE DEMENTIA</p>
+        <button onclick="hidePopup('popup3')">Close</button>
+    </div>
+    <div id="popup4" class="popup">
+        <p>DEMENTED</p>
+        <button onclick="hidePopup('popup4')">Close</button>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="hideAllPopups()"></div>
 
     <script>
         document.querySelector('form').addEventListener('submit', async function (e) {
@@ -23,8 +65,34 @@
                 body: formData
             });
             const result = await response.json();
-            document.getElementById('result').innerText = Prediction: ${result.prediction};
+            document.getElementById('result').innerText = 'Prediction: ${result.prediction}';
         });
+
+        // document.getElementById('pop1').addEventListener('click', function() {
+        //     document.getElementById('popup').style.display = 'block';
+        // });
+
+        // document.getElementById('closePopup').addEventListener('click', function() {
+        //     document.getElementById('popup').style.display = 'none';
+        // });
+
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hidePopup(id) {
+            document.getElementById(id).style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function hideAllPopups() {
+            var popups = document.getElementsByClassName('popup');
+            for (var i = 0; i < popups.length; i++) {
+                popups[i].style.display = 'none';
+            }
+            document.getElementById('overlay').style.display = 'none';
+        }
     </script>
 </body>
 </html>
