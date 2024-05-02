@@ -89,6 +89,10 @@ def moca():
 
     else:
         return render_template("moca.html")
+    
+@app.route("/predict")
+def predict ():
+    return render_template("mri.html")
 
 
     
