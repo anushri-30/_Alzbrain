@@ -1,11 +1,15 @@
+
 {% extends "layout.html" %}
 {% block title %}
-Contact Us
+MOCA TEST
 {% endblock %}
 
 {% block main %}
+
 <link href="static\css\form.css" rel="stylesheet">
 <script src="script.js"></script>
+<div class="page">
+   <div class="background"></div>
 <div class="contact">
    <form id="quiz-form" action="/submit_quiz" method="post">
       <div class="pt-4" >
@@ -216,5 +220,6 @@ Contact Us
       <p id="quiz-results-message"></p>
       <p id="quiz-results-score"></p>
     </div> -->
+</div>
 </div>
 {% endblock %}
