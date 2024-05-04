@@ -16,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/bg3.jpg');
+  background-image: url('../images/bg4.jpg');
   opacity: 0.3; /* Adjust the opacity value as needed */
 }
 /* .page::before{ */
@@ -68,7 +68,7 @@
     margin: 4px;
     margin-left: 15px !important;
     padding: 8px;
-    background:#7AB2B2 ;
+    background:#D5B4B4 ;
     color:#333;
     min-width: 290px;
     cursor: pointer;
@@ -76,7 +76,7 @@
   
   .contact label:hover {
     /* background: #BACD92; */
-    background: #D1BB9E;
+    background: #E4D0D0;
   }
 
   .contact select{
